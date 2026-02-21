@@ -1,14 +1,12 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/521xueweihan/HGDoll/refs/heads/main/docs/assets/icon.png" width='200'/>
+    <img src="https://raw.githubusercontent.com/521xueweihan/HGDoll/refs/heads/main/docs/assets/icon.png" width='200'/>
   <br>中文 | <a href="docs/README_en.md">English</a>
-  <br>HGDoll 是一款 AI 陪玩应用，支持手机端和电脑网页端游戏.
+    <br>智能陪玩助手 是一款 AI 陪玩应用，支持手机端和电脑网页端游戏.
 </p>
 
-这是一款完全开源的 AI 陪玩应用。在你游戏时，HGDoll 可实时看到你的游戏画面，陪你聊天、为你加油鼓劲，带来有趣的陪伴体验。它基于豆包大模型和火山方舟 Arkitect 构建，包含[安卓客户端](android/README.md)（Kotlin）、[网页端插件](web-plugin/README.md)（Chrome Extension）和[后端服务](server/README.md)（Python）三部分，支持本地运行轻松上手。
+这是一款完全开源的 AI 陪玩应用。在你游戏时，智能陪玩助手 可实时看到你的游戏画面，陪你聊天、为你加油鼓劲，带来有趣的陪伴体验。它基于豆包大模型和火山方舟 Arkitect 构建，包含[安卓客户端](android/README.md)（Kotlin）、[网页端插件](web-plugin/README.md)（Chrome Extension）和[后端服务](server/README.md)（Python）三部分，支持本地运行轻松上手。
 
 https://github.com/user-attachments/assets/704d7f2a-3206-45f2-8760-d9cf9577ca7c
-
-目前，HGDoll 还只是一个“小玩具”，仍有许多 Bug 和改进空间，我会持续更新和完善，同时欢迎大家上手体验，一起贡献代码。
 
 ## 架构图
 
@@ -81,7 +79,7 @@ graph TD
 ### 项目结构
 
 ```
-HGDoll/
+智能陪玩助手/
 ├── android/          # 安卓客户端
 ├── web-plugin/       # 网页端 Chrome 浏览器扩展插件（新增）
 ├── server/           # 后端服务

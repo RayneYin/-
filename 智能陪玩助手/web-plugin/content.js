@@ -1,5 +1,5 @@
 /**
- * HGDoll Web Plugin - Content Script
+ * 智能陪玩助手 Web Plugin - Content Script
  * 注入到游戏网页中，创建悬浮面板用于显示 AI 陪玩助手回复和语音控制
  */
 
@@ -15,7 +15,7 @@
   overlay.innerHTML = `
     <div id="hgdoll-panel" class="hgdoll-panel hgdoll-collapsed">
       <div id="hgdoll-header" class="hgdoll-header">
-        <span class="hgdoll-logo">HGDoll</span>
+        <span class="hgdoll-logo">智能陪玩助手</span>
         <div class="hgdoll-header-btns">
           <button id="hgdoll-minimize" class="hgdoll-icon-btn" title="最小化">−</button>
           <button id="hgdoll-close" class="hgdoll-icon-btn" title="关闭">×</button>
@@ -46,7 +46,7 @@
         </div>
       </div>
     </div>
-    <button id="hgdoll-fab" class="hgdoll-fab" title="HGDoll 陪玩助手">
+    <button id="hgdoll-fab" class="hgdoll-fab" title="智能陪玩助手">
       <span>🎮</span>
     </button>
   `;
@@ -149,7 +149,7 @@
 
   // ========== 接收消息 ==========
   chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    console.log('HGDoll content: 收到消息', message.type,
+    console.log('智能陪玩助手 content: 收到消息', message.type,
       message.type === 'AI_RESPONSE' ? message.text?.substring(0, 50) : '',
       message.type === 'PLAY_AUDIO' ? `audio=${message.audioData?.length} chars` : '');
     switch (message.type) {
@@ -217,10 +217,10 @@
       const blob = new Blob([arrayBuffer], { type: 'audio/mp3' });
       const url = URL.createObjectURL(blob);
       const audio = new Audio(url);
-      audio.play().catch(err => console.warn('HGDoll: 音频播放失败', err));
+      audio.play().catch(err => console.warn('智能陪玩助手: 音频播放失败', err));
       audio.onended = () => URL.revokeObjectURL(url);
     } catch (e) {
-      console.warn('HGDoll: 音频解码失败', e);
+      console.warn('智能陪玩助手: 音频解码失败', e);
     }
   }
 
@@ -277,9 +277,9 @@
       source.connect(scriptProcessor);
       scriptProcessor.connect(audioContext.destination);
       isRecording = true;
-      console.log('HGDoll: 录音已开始');
+      console.log('智能陪玩助手: 录音已开始');
     } catch (err) {
-      console.error('HGDoll: 无法获取麦克风权限', err);
+      console.error('智能陪玩助手: 无法获取麦克风权限', err);
       chrome.runtime.sendMessage({
         type: 'STATUS_UPDATE',
         text: '麦克风权限被拒绝',
@@ -301,7 +301,7 @@
       mediaStream.getTracks().forEach((track) => track.stop());
       mediaStream = null;
     }
-    console.log('HGDoll: 录音已停止');
+    console.log('智能陪玩助手: 录音已停止');
   }
 
   function float32ToInt16(float32Array) {

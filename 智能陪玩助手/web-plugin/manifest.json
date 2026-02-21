@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "HGDoll - AI 游戏陪玩助手",
+  "name": "智能陪玩助手 - AI 游戏陪玩助手",
   "version": "1.0.0",
-  "description": "HGDoll 网页端插件：AI 实时陪玩，看到你的游戏画面，陪你聊天、为你加油鼓劲！",
+  "description": "智能陪玩助手 网页端插件：AI 实时陪玩，看到你的游戏画面，陪你聊天、为你加油鼓劲！",
   "permissions": [
     "activeTab",
     "tabs",

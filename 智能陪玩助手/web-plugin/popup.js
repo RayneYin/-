@@ -1,5 +1,5 @@
 /**
- * HGDoll Web Plugin - Popup 设置页面逻辑
+ * 智能陪玩助手 Web Plugin - Popup 设置页面逻辑
  * 管理用户配置（服务器地址、ASR凭证等），并与 background service worker 通信
  */
 
