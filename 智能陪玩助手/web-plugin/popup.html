@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HGDoll 设置</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="title">HGDoll</h1>
+      <p class="subtitle">AI 游戏陪玩助手 · 网页版</p>
+    </div>
+
+    <div class="form-group">
+      <label for="serverIp">服务器地址</label>
+      <input type="text" id="serverIp" placeholder="例如: 127.0.0.1:8888">
+      <small class="hint">仅填写 IP:端口，不要加 http://</small>
+    </div>
+
+    <div class="form-group">
+      <label for="asrAppId">ASR App ID</label>
+      <input type="text" id="asrAppId" placeholder="语音识别 App ID（与 TTS App ID 相同）">
+      <small class="hint">在火山引擎控制台-语音技术-应用管理中获取</small>
+    </div>
+
+    <div class="form-group">
+      <label for="asrAccessToken">ASR Access Token</label>
+      <input type="password" id="asrAccessToken" placeholder="语音识别 Access Token（与 TTS 相同）">
+    </div>
+
+    <div class="form-group">
+      <label for="screenshotInterval">截图间隔 (秒)</label>
+      <input type="number" id="screenshotInterval" value="3" min="1" max="30" step="1">
+    </div>
+
+    <div class="btn-group">
+      <button id="saveBtn" class="btn btn-primary">保存设置</button>
+      <button id="toggleBtn" class="btn btn-success">启动陪玩</button>
+    </div>
+
+    <div class="status-bar">
+      <span id="statusText">未启动</span>
+      <span id="statusDot" class="status-dot offline"></span>
+    </div>
+
+    <div id="message" class="message hidden"></div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

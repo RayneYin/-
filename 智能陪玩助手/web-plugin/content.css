@@ -1,0 +1,271 @@
+/* ========== HGDoll Overlay 样式 ========== */
+/* 使用 hgdoll- 前缀避免与页面样式冲突 */
+
+#hgdoll-overlay {
+  position: fixed;
+  z-index: 2147483647;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  pointer-events: none;
+}
+
+#hgdoll-overlay * {
+  pointer-events: auto;
+}
+
+/* ========== 悬浮按钮 ========== */
+.hgdoll-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(102, 126, 234, 0.5);
+  transition: all 0.3s ease;
+  z-index: 2147483647;
+}
+
+.hgdoll-fab:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(102, 126, 234, 0.7);
+}
+
+/* ========== 面板 ========== */
+.hgdoll-panel {
+  position: fixed;
+  right: 20px;
+  bottom: 90px;
+  width: 320px;
+  max-height: 480px;
+  background: #1a1a2e;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  z-index: 2147483647;
+}
+
+.hgdoll-panel.hgdoll-collapsed {
+  display: none;
+}
+
+.hgdoll-panel.hgdoll-expanded {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ========== 头部 ========== */
+.hgdoll-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  cursor: move;
+  user-select: none;
+}
+
+.hgdoll-logo {
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.hgdoll-header-btns {
+  display: flex;
+  gap: 4px;
+}
+
+.hgdoll-icon-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+
+.hgdoll-icon-btn:hover {
+  background: rgba(255, 255, 255, 0.35);
+}
+
+/* ========== 消息体 ========== */
+.hgdoll-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+}
+
+.hgdoll-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 16px;
+  max-height: 340px;
+  min-height: 120px;
+}
+
+.hgdoll-messages::-webkit-scrollbar {
+  width: 4px;
+}
+
+.hgdoll-messages::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+/* ========== 消息气泡 ========== */
+.hgdoll-msg {
+  margin-bottom: 10px;
+  display: flex;
+  animation: hgdoll-fadeIn 0.3s ease;
+}
+
+@keyframes hgdoll-fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hgdoll-msg span {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  line-height: 1.5;
+  max-width: 85%;
+  word-break: break-word;
+}
+
+.hgdoll-msg-bot {
+  justify-content: flex-start;
+}
+
+.hgdoll-msg-bot span {
+  background: linear-gradient(135deg, #3a3a5c, #2d2d4a);
+  color: #e0e0ff;
+  border-bottom-left-radius: 4px;
+}
+
+.hgdoll-msg-user {
+  justify-content: flex-end;
+}
+
+.hgdoll-msg-user span {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+/* ========== 输入区域 ========== */
+.hgdoll-input-area {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 12px;
+  background: rgba(0, 0, 0, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hgdoll-text-input {
+  flex: 1;
+  height: 34px;
+  padding: 0 12px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 17px;
+  background: rgba(255, 255, 255, 0.08);
+  color: #e0e0ff;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.hgdoll-text-input::placeholder {
+  color: rgba(255, 255, 255, 0.35);
+}
+
+.hgdoll-text-input:focus {
+  border-color: #667eea;
+}
+
+.hgdoll-send-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.hgdoll-send-btn:hover {
+  opacity: 0.85;
+}
+
+/* ========== 控制栏 ========== */
+.hgdoll-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px 8px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.hgdoll-mic-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+
+.hgdoll-mic-btn:hover {
+  border-color: #667eea;
+  color: #667eea;
+}
+
+.hgdoll-mic-btn.hgdoll-mic-active {
+  background: #f44336;
+  border-color: #f44336;
+  color: white;
+  animation: hgdoll-pulse-mic 1.5s infinite;
+}
+
+@keyframes hgdoll-pulse-mic {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(244, 67, 54, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(244, 67, 54, 0); }
+}
+
+.hgdoll-mic-status {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
